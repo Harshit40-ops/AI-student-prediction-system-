@@ -1,3 +1,4 @@
+🚀 Live Demo: https://zk7jtx5llgced49xpvcand.streamlit.app/
 # 🎓 AI Student Performance Prediction Dashboard
 
 An **AI-powered Data Science project** that predicts a student's academic performance using Machine Learning and presents insights through an interactive dashboard.
