@@ -25,7 +25,11 @@ color:#2E86C1;
 """, unsafe_allow_html=True)
 
 # Load Model and Columns
-model = joblib.load("student_model.pkl")
+import os
+import joblib
+
+model_path = os.path.join(os.path.dirname(__file__), "student_model.pkl")
+model = joblib.load(model_path)
 model_columns = joblib.load("model_columns.pkl")
 
 # Load Dataset for Graphs
@@ -198,6 +202,7 @@ st.markdown(f"""
 <h2>📊 Predicted Score: {prediction[0]:.2f}</h2>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
