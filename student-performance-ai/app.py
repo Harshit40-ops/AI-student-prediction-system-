@@ -140,6 +140,65 @@ ax.set_title("Feature Importance")
 
 st.pyplot(fig)
 st.subheader("📈 Interactive Study Hours vs Score")
+st.markdown("""
+<style>
+
+.stApp {
+background: linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+}
+
+h1{
+text-align:center;
+font-size:45px;
+font-weight:bold;
+animation: fadeIn 2s;
+}
+
+@keyframes fadeIn{
+0%{opacity:0;}
+100%{opacity:1;}
+}
+
+div.stButton > button {
+background: linear-gradient(90deg,#ff512f,#dd2476);
+color:white;
+border:none;
+border-radius:10px;
+padding:10px 20px;
+font-size:18px;
+transition:0.3s;
+}
+
+div.stButton > button:hover{
+transform:scale(1.05);
+box-shadow:0px 0px 15px rgba(0,0,0,0.3);
+}
+
+.block-container{
+padding-top:2rem;
+}
+
+.card {
+background: rgba(255,255,255,0.1);
+padding:20px;
+border-radius:15px;
+backdrop-filter: blur(10px);
+box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+margin-bottom:20px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+st.markdown("<h1>🎓 AI Student Performance Dashboard</h1>", unsafe_allow_html=True)
+
+st.write("Predict student performance using Machine Learning 📊")
+st.markdown(f"""
+<div class="card">
+<h2>📊 Predicted Score: {prediction[0]:.2f}</h2>
+</div>
+""", unsafe_allow_html=True)
+
 
 
 
