@@ -6,3 +6,5 @@ joblib
 plotly
 seaborn
 matplotlib
+streamlit-lottie
+requests
