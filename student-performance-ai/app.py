@@ -214,6 +214,53 @@ st.markdown(f"""
 <h2>📊 Predicted Score: {prediction[0]:.2f}</h2>
 </div>
 """, unsafe_allow_html=True)
+import streamlit as st
+import requests
+from streamlit_lottie import st_lottie
+def load_lottie(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+lottie_ai = load_lottie("https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json")
+col1, col2 = st.columns(2)
+
+with col1:
+    st.title("🎓 AI Student Performance Dashboard")
+    st.write("Predict student scores using Machine Learning and interactive analytics.")
+
+with col2:
+    st_lottie(lottie_ai, height=300)
+
+st.markdown("""
+<style>
+
+.stApp {
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
+
+div[data-testid="stMetric"]{
+background: rgba(255,255,255,0.1);
+padding:20px;
+border-radius:15px;
+backdrop-filter: blur(10px);
+box-shadow:0 8px 32px rgba(0,0,0,0.37);
+}
+
+button {
+border-radius:12px !important;
+transition:0.3s;
+}
+
+button:hover {
+transform:scale(1.05);
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+st.metric("Predicted Score", prediction)
 
 
 
