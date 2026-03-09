@@ -39,7 +39,13 @@ model = joblib.load(model_path)
 columns_path = os.path.join(base_dir, "model_columns.pkl")
 model_columns = joblib.load(columns_path)
 # Load Dataset for Graphs
-df = pd.read_csv(r"C:\Users\my\Desktop\student-performance-ai\Student_Performance.csv")
+import os
+import pandas as pd
+
+base_dir = os.path.dirname(__file__)
+data_path = os.path.join(base_dir, "Student_Performance.csv")
+
+df = pd.read_csv(data_path)
 
 # Title
 st.markdown("<h1 style='text-align:center;'>🎓 AI Student Performance Dashboard</h1>", unsafe_allow_html=True)
@@ -208,6 +214,7 @@ st.markdown(f"""
 <h2>📊 Predicted Score: {prediction[0]:.2f}</h2>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
