@@ -28,10 +28,16 @@ color:#2E86C1;
 import os
 import joblib
 
-model_path = os.path.join(os.path.dirname(__file__), "student_model.pkl")
-model = joblib.load(model_path)
-model_columns = joblib.load("model_columns.pkl")
+# Current folder path
+base_dir = os.path.dirname(__file__)
 
+# Model path
+model_path = os.path.join(base_dir, "student_model.pkl")
+model = joblib.load(model_path)
+
+# Column path
+columns_path = os.path.join(base_dir, "model_columns.pkl")
+model_columns = joblib.load(columns_path)
 # Load Dataset for Graphs
 df = pd.read_csv(r"C:\Users\my\Desktop\student-performance-ai\Student_Performance.csv")
 
@@ -202,6 +208,7 @@ st.markdown(f"""
 <h2>📊 Predicted Score: {prediction[0]:.2f}</h2>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
